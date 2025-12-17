@@ -1,0 +1,17 @@
+import pyodbc
+
+class ConnectionFactory:
+    @staticmethod
+    def get_Connection():
+        connection_String = (
+            "Driver={SQL Server};"
+            "Server=localhost;"                 # ou NOME-DO-PC\SQLEXPRESS
+            "Database=loginBanco;"              # Nome do DataBase
+            "Trusted_Connection=yes;"           # Usa Login do Windows
+            "Encrypt=no;"                       # Evita Erros do SSL
+        )
+        try:
+            conn = pyodbc.connect(connection_String)
+            return conn
+        except Exception as e:
+            raise RuntimeError(f"Erro de Conexão: {e}")

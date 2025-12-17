@@ -1,0 +1,47 @@
+QWidget {
+    background-color: pink; /*Cor de Fundo da Janela*/
+    border: 1px solid #3498db; /*Borda Azul da Janela*/
+    border-radius: 10px; /* Bordas Arredondadas*/
+}
+QLabel {
+    color: #2c3e50; /* Cor do Texto da Label*/
+    font-size: 14px; /* Tamanho da Fonte*/
+    font-weight: bold; /* Negrito*/
+}
+QPushButton {
+    background-color: #3498db; /* Cor de Fundo do Botão*/
+    color: white; /* Cor do Texto do Botão*/
+    border: 1px solid #2980b9; /* Borda Azul-Escuro*/
+    border-radius: 5px; /* Bordas Arredondadas*/   
+    padding: 5px; /* Espaçamento Interno*/
+    font-size: 12px; /* Tamanho da Fonte*/                     
+}                  
+QPushButton:hover {
+    background-color: #2980b9; /* Cor ao Passar o Mouse*/                     
+}                        
+QPushButton:pressed{
+    background-color: #1f639e; /* Cor ao Pressionar*/
+}
+
+#botaoCustomizado {
+    background-color: #fbff67;
+    color: black;
+    border: 2px solid #ffcf2a;
+    border-radius: 5px;
+}
+
+#botaoCustomizado:hover {
+    background-color: #ffcf2a;
+}
+
+#classeBotao {
+    background-color: #fb29f5;
+    color: white;
+    border: 2px solid #980398;
+    border-radius: 5px;
+}
+
+#classeBotao:hover {
+    background-color: #980398;
+}
+

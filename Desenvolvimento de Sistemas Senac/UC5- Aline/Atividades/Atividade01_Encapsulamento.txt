@@ -1,0 +1,48 @@
+1. 
+Inicio
+	escreva("5")
+Fim
+
+
+2. 
+Inicio
+	//Entrada
+	Escreva("insira o valor da potencia")
+  	Leia(numero)
+	Escreva(numero)
+FIM
+
+
+
+3. 
+Inicio
+   //Entrada
+   Escreva ("insira o valor do lado")
+   
+   Leia (lado)
+   resultado = (lado*lado)
+   Escreva (resultado)
+FIM
+
+
+4. //Entrada
+   Escreva("insira o valor")
+   Leia (numero)
+   Se (numero <10)
+      Escreva ("num menor que 10")
+   Senão
+      Escreva ("num maior ou igual a 10")
+   fimse
+FIM
+
+
+5. //Entrada
+   Escreva("insira o valor da tabuada")
+   Leia (numero)
+   Se(num >= 1) então
+	Para(i = 1 até 10) faça
+	   Escreva(numero, "x" ,i , =, numero * i)             														
+	fimpara
+   Fimse								
+FIM
+						

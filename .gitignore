@@ -1,0 +1,21 @@
+# Ignorando as Pastas com os Materiais das Aulas
+/Aula
+Aula/
+Aula/*
+/Jogos
+Jogos/
+Jogos/*
+/Prática em Casa
+Prática em Casa/
+Prática em Casa/*
+/UC0- Adicional
+UC0- Adicional/
+UC0- Adicional/*
+Curso Senac DS- Plano do Curso Matérias DS
+logica soma total galpao
+/fretes-mvc
+fretes-mvc/*
+fretes-mvc/
+/fretes-mvc - Atalho
+fretes-mvc - Atalho/*
+fretes-mvc - Atalho/

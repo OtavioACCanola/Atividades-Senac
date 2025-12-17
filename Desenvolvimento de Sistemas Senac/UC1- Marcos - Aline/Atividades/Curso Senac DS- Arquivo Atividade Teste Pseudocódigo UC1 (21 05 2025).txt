@@ -1,0 +1,62 @@
+1) Desenvolva um algoritmo que represente um sistema que apresente o número 5:
+Início
+	Escreva (''5'')
+Fim
+Correto
+
+2) Desenvolva um algoritmo que solicite um numero ao usuário e apresente o número informado
+Início
+	Escreva (''Escreva um Número Aleatório'')
+	Leia (Número Aleatório)	
+	Escreva ('' O número Aleatório foi:'Número Aleatório)
+Fim
+  
+3) Desenvolva um algoritmo que solicite o lado de um quadrado para o usuário e realize o calculo da área com base nesse numero informado. Ao final do programa, essa área deverá ser exibida
+Inicio
+	Escreva (''Informe lado Quadrado'')
+	Leia (Lado Quadrado)
+	Calcule área (area= lado*lado)
+	Escreva (''Aea do quadrado é'',área)
+Fim
+
+4) Desenvolva um algoritmo que solicite um número ao usuário e verifique se esse número é maior ou menor que 10 e mostre a mensagem condizente
+Inicio 
+	Escreva (''Escreva um Número Aleatório'')
+	Leia (Número Aleatório'')
+	Se (Número Aleatório) > que 10
+	Escreva (''Número maior que 10'')
+	Se não
+	Escreva (''Número menor que 10'')
+Fim
+
+5) Desenvolva um algoritmo que solicite um número ao usuário e apresente a ele a tabuada correspondente
+Início
+	
+
+
+
+
+
+	screva (''Escreva um Número para descobrir sua tabuada'')
+	Leia (Número Aleatório)
+	Calcule (Número Aleatório) *1 = (Resultado 1)
+	Calcule (Número Aleatório) *2 = (Resultado 2)
+	Calcule (Número Aleatório) *3 = (Resultado 3)
+	Calcule (Número Aleatório) *4 = (Resultado 4)
+	Calcule (Número Aleatório) *5 = (Resultado 5)
+	Calcule (Número Aleatório) *6 = (Resultado 6)
+	Calcule (Número Aleatório) *7 = (Resultado 7)
+	Calcule (Número Aleatório) *8 = (Resultado 8)
+	Calcule (Número Aleatório) *9 = (Resultado 9)
+	Calcule (Número Aleatório) *10 = (Resultado 10)
+'	Leia (Resultado 1) : (Resultado 10)
+	Escreva (Resultado 1)
+	screva (Resultado 1)
+	Escreva (Resultado 1)
+	Escreva (Resultado 1)
+	Escreva (Resultado 1)
+	Escreva (esultado 1)
+	Ecreva (Resultado 1)
+	Ecreva (Resultado 1)
+	Ecreva (Resultado 1)
+	Ereva (Resultado 1)

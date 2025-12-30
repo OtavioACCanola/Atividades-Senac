@@ -1,0 +1,24 @@
+for (int i = 0; i < listaSS.length - 1; i++){
+            int minIndex = i;
+            for (int j = i+1; j < listaSS.length;j++){
+                if (listaSS[j] < listaSS[minIndex]){
+                    minIndex = j;}
+                listaSS[i] = listaSS[minIndex];
+                }
+            }
+
+Rodada 1:
+i = 0
+minindex = 0
+listaSS[1] < listaSS[0]
+minIndex = 1
+listaSS[0] = 1
+
+Rodada 2:
+i = 0
+mindindex = 1
+j = 1
+listaSS[1] 4
+temp = listaSS[0] i
+minindex = 1
+ListaSS[0] 8= listaSS[minindex] 4

@@ -5,8 +5,8 @@ class ConnectionFactory:
     def get_Connection():
         connection_String = (
             "Driver={SQL Server};"
-            "Server=localhost;"                 # ou NOME-DO-PC\SQLEXPRESS
-            "Database=loginBanco;"              # Nome do DataBase
+            "Server=DESKTOP-FIQ0BGR\SQLEXPRESS;"                 # ou NOME-DO-PC\SQLEXPRESS
+            "Database=LoginBanco;"              # Nome do DataBase
             "Trusted_Connection=yes;"           # Usa Login do Windows
             "Encrypt=no;"                       # Evita Erros do SSL
         )

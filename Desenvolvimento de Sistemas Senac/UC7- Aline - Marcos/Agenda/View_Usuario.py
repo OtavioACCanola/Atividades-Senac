@@ -1,16 +1,24 @@
-# Colocar as funções da DAO na View para Funcionar
+# Fazer o Editar
+# Editat a Tela Editar para mostrar os nomes dos usuários para editar
 
 # Importações
 import sys
-from PyQt5.QtWidgets import QMessageBox, QLabel, QLineEdit, QApplication, QPushButton, QWidget, QRadioButton, QTextEdit
+from PyQt5.QtWidgets import QMessageBox, QLabel, QLineEdit, QApplication, QPushButton, QWidget, QRadioButton, QTextEdit, QComboBox
 from PyQt5.QtGui import QFont
-
 from DAO_Usuario import DAO_Usuario
 
 # Criando a Aplicação
 app = QApplication(sys.argv)
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= MÉTODOS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+# def conectNomeComboBox():
+#     Opcoes.setVisible(True)
+#     Opcoes.move(10,160)
+
+#     lista = [DAO_Usuario.consultarNomes]
+#     for nomes in lista:
+#         Opcoes.addItem(nomes[0])
 
 def Autenticar(self):
     email = TxtEmail.text()
@@ -24,8 +32,10 @@ def Autenticar(self):
             QMessageBox.information(JanelaLogin, "Login", "Acesso Concedido!")
             JanelaLogin.close()
             JanelaPrincipal.show()
-            RBtnCadastrar.setCheckable(True)
+            RBtnCadastrar.setChecked(True)
+            informacoesFuncao()
             esconderBotao()
+            BtnCadastrar.setVisible(True)
         else:
             QMessageBox.critical(JanelaLogin, "Erro", "Email ou Senha Incorretos, Tente Novamente!")
             limpaCampo()
@@ -55,27 +65,37 @@ def Remover(self):
         limpaCampo()
 
 def Editar(self):
+    Id = TxtIDTP.text()
     email = TxtEmailTP.text()
+    senha = TxtSenhaTP.text()
+    nome = TxtNomeTP.text()
 
-    if email == "":
+    if email == "" or senha == "" or nome == "":
         QMessageBox.critical(JanelaLogin, "Erro", "Os Campos Precisam Estar Preenchidos!")
         limpaCampo()
     else:
-        DAO_Usuario.Remover(self, email)
-        QMessageBox.information(JanelaPrincipal, "Remoção", "Usuário Removido com Sucesso!")
-        limpaCampo()
+        edicao = DAO_Usuario.Editar(self, Id, email, senha, nome)
+        if edicao == True:
+            QMessageBox.information(JanelaPrincipal, "Edição", "Usuário Editado com Sucesso!")
+            limpaCampo()
+        else:
+            QMessageBox.critical(JanelaPrincipal, "Erro", "Usuário não Encontrado no Banco")
+        
 
 def Listar(self):
-    email = TxtEmailTP.text()
+    # Separar usuários por Parágrafos
+    TxtListar.setVisible(True)
+    lista = str(DAO_Usuario.concultarTodos(self))
+    TxtListar.setText(lista)
 
-    listaUsuario = str(DAO_Usuario.concultarTodos)
-    TxtListar.setText(listaUsuario)
+# Fazer um def Editar
 
 def esconderBotao():
     BtnCadastrar.setVisible(False)
     BtnEditar.setVisible(False)
     BtnLogin.setVisible(False)
     BtnRemover.setVisible(False)
+    Opcoes.setVisible(False)
 
 def limpaCampo():
     TxtEmail.clear()
@@ -83,6 +103,7 @@ def limpaCampo():
     TxtEmailTP.clear()
     TxtNomeTP.clear()
     TxtSenhaTP.clear()
+    TxtIDTP.clear()
 
 def informacoesFuncao():
     TxtListar.setVisible(False)
@@ -92,6 +113,7 @@ def informacoesFuncao():
         LblNomeTP.setVisible(True)
         LblSenhaTP.setVisible(True)
         LblEmailTP.setVisible(True)
+        LblIDTP.setVisible(False)
         BtnLogin.setVisible(True)
 
         LblNomeTP.move(30, 160)
@@ -101,6 +123,7 @@ def informacoesFuncao():
         TxtNomeTP.setVisible(True)
         TxtEmailTP.setVisible(True)
         TxtSenhaTP.setVisible(True)
+        TxtIDTP.setVisible(False)
 
         TxtNomeTP.move(80,160)
         TxtEmailTP.move(80, 200)
@@ -112,32 +135,58 @@ def informacoesFuncao():
         LblNomeTP.setVisible(False)
         LblEmailTP.setVisible(True)
         LblSenhaTP.setVisible(False)
-        
+        LblIDTP.setVisible(False)
+
+        LblNomeTP.move(30, 160)
+        LblEmailTP.move(30,200)
+        LblSenhaTP.move(30, 240)
+
         TxtNomeTP.setVisible(False)
-        TxtEmailTP.move(80, 200)
         TxtSenhaTP.setVisible(False)
+        TxtIDTP.setVisible(False)
+        TxtEmailTP.move(80, 200)
+        
         BtnRemover.setVisible(True)
 
+# Tela Editar
     elif RBtnEditar.isChecked():
+        
         esconderBotao()
         LblNomeTP.setVisible(True)
         LblEmailTP.setVisible(True)
         LblSenhaTP.setVisible(True)
-        
+        LblIDTP.setVisible(True)
+
+        LblIDTP.move(40,160)
+        LblNomeTP.move(20, 190)
+        LblEmailTP.move(20,220)
+        LblSenhaTP.move(20, 250)
+
+        TxtIDTP.setVisible(True)
         TxtNomeTP.setVisible(True)
         TxtEmailTP.setVisible(True)
         TxtSenhaTP.setVisible(True)
+
+        TxtIDTP.move(70,160)
+        TxtNomeTP.move(70,190)
+        TxtEmailTP.move(70, 220)
+        TxtSenhaTP.move(70, 250)
+
         BtnEditar.setVisible(True)
 
     elif RBtnListar.isChecked():
         esconderBotao()
+        LblNomeTP.setVisible(False)
+        LblEmailTP.setVisible(False)
+        LblSenhaTP.setVisible(False)
+        LblIDTP.setVisible(False)
+
         TxtNomeTP.setVisible(False)
         TxtEmailTP.setVisible(False)
         TxtSenhaTP.setVisible(False)
+        TxtIDTP.setVisible(False)
         TxtListar.setVisible(True)
         TxtListar.move(30,140)
-        # TxtListar.setText(DAO_Usuario.concultarTodos)
-
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= TELA LOGIN =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
 
@@ -192,6 +241,10 @@ FonteTitulo = QFont("MS Shell Dlg 2", 20)
 FonteTitulo.setBold(True)
 LblTituloTP.setFont(FonteTitulo)
 
+# ID
+LblIDTP = QLabel("ID: ", JanelaPrincipal)
+LblIDTP.setVisible(False)
+
 # Nome
 LblNomeTP = QLabel("Nome: ", JanelaPrincipal)
 LblNomeTP.setVisible(False)
@@ -205,6 +258,11 @@ LblSenhaTP = QLabel("Senha: ", JanelaPrincipal)
 LblSenhaTP.setVisible(False)
 
 # ------------------- TEXTFIELDS ------------------- 
+
+# ID
+TxtIDTP = QLineEdit(JanelaPrincipal)
+TxtIDTP.setVisible(False)
+TxtIDTP.setFixedWidth(181)
 
 # Nome
 TxtNomeTP = QLineEdit(JanelaPrincipal)
@@ -223,6 +281,11 @@ TxtSenhaTP.setFixedWidth(151)
 
 TxtListar = QTextEdit(JanelaPrincipal)
 TxtListar.setVisible(False)
+
+# ------------------- COMBO BOX -------------------
+
+Opcoes = QComboBox(JanelaPrincipal)
+
 # ------------------- BOTÕES -------------------
 
 # Cadastrar
@@ -245,6 +308,7 @@ RBtnRemover.clicked.connect(informacoesFuncao)
 # Editar
 BtnEditar = QPushButton("Editar", JanelaPrincipal)
 BtnEditar.move(180,290)
+BtnEditar.clicked.connect(Editar)
 
 RBtnEditar = QRadioButton("Editar", JanelaPrincipal)
 RBtnEditar.move(290,80)
@@ -259,7 +323,8 @@ RBtnListar.clicked.connect(Listar)
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= RODAR TELA =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 # ------------------- Exibindo Janela ------------------- 
-JanelaPrincipal.show()
+
+JanelaLogin.show()
 
 # ------------------- Loop de Exibição -------------------
 sys.exit(app.exec_())

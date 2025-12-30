@@ -31,7 +31,7 @@ class DAO_Usuario:
             conn.close()
             return resultado is not None
         except Exception as e:
-            RuntimeError(f"Erro ao Autentificar: {e}")
+            print(f"Erro ao Autentificar: {e}")
             return False
         
     def concultarTodos(self):
@@ -45,9 +45,25 @@ class DAO_Usuario:
             usuarios = cursor.fetchall()
             cursor.close()
             conn.close() 
-            return usuarios # Ret0rja a Lista de Usuários
+            return usuarios # Retorna a Lista de Usuários
         except Exception as e:
             print(f"Erro ao Consultar Usuários: {e}")
+            return []
+
+    def consultarNomes(self):
+        sql = """
+              SELECT Nome FROM TBL_Usuarios
+              """
+        try:
+            conn = ConnectionFactory.get_Connection()
+            cursor = conn.cursor()
+            cursor.execute(sql)
+            nomeUsuarios = cursor.fetchall()
+            cursor.close()
+            conn.close()
+            return nomeUsuarios
+        except Exception as e:
+            print(f"Erro ao Consultar Nome dos Usuários: {e}")
             return []
 
     def Remover(self, Email):
@@ -74,5 +90,31 @@ class DAO_Usuario:
             return True
         except Exception as e:
             print(f"Erro ao Remover Usuário: {e}")
+            return False
+
+# Corrigir Editar
+    def Editar(self, Id, Email, Senha, Nome):
+        sql_VerificaId = "SELECT Id FROM TBL_Usuarios WHERE Id = ?"
+
+        sql_Editar = "UPDATE TBL_Usuarios SET Email = ?, Nome = ?, Senha = ? WHERE Id = ?" 
+        # Não pode colocar '' onde estão as ?, vai dar erro
+        
+        try:
+            conn = ConnectionFactory.get_Connection()
+            cursor = conn.cursor()
+            cursor.execute(sql_VerificaId, (Id))
+            usuario = cursor.fetchone()
+            if usuario is None:
+                cursor.close()
+                conn.close()
+                return False  
+            edicao = Email, Nome, Senha, Id, # Precisa de uma virgulo aqui também, para virar uma tupla, é como se fosse o parenteses que vira tupla
+            cursor.execute(sql_Editar, edicao)
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return True
+        except Exception as e:
+            print(f"Erro ao Editar o Usuário: {e}")
             return False
         

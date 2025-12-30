@@ -26,7 +26,6 @@
     <property name="font">
      <font>
       <pointsize>20</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -122,8 +121,8 @@
    <widget class="QLabel" name="LblNome">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>160</y>
+      <x>20</x>
+      <y>190</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -140,8 +139,8 @@
    <widget class="QLabel" name="LblEmail">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>200</y>
+      <x>20</x>
+      <y>220</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -158,8 +157,8 @@
    <widget class="QLabel" name="LblSenha">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>240</y>
+      <x>20</x>
+      <y>250</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -176,8 +175,8 @@
    <widget class="QLineEdit" name="TxtNome">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>160</y>
+      <x>70</x>
+      <y>190</y>
       <width>241</width>
       <height>20</height>
      </rect>
@@ -186,8 +185,8 @@
    <widget class="QLineEdit" name="TxtEmail">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>200</y>
+      <x>70</x>
+      <y>220</y>
       <width>241</width>
       <height>20</height>
      </rect>
@@ -196,8 +195,8 @@
    <widget class="QLineEdit" name="TxtSenha">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>240</y>
+      <x>70</x>
+      <y>250</y>
       <width>151</width>
       <height>20</height>
      </rect>
@@ -206,7 +205,7 @@
    <widget class="QPushButton" name="BtnCadastrar">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>160</x>
       <y>290</y>
       <width>101</width>
       <height>23</height>
@@ -215,12 +214,39 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
      <string>Cadastrar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TxtNome_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>160</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LblNome_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ID:</string>
     </property>
    </widget>
   </widget>
@@ -230,7 +256,7 @@
      <x>0</x>
      <y>0</y>
      <width>478</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

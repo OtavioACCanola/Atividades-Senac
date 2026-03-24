@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Calculadora desenvolvida para aprender a criar buttons e tabelas com HTML5">
+    <meta name="keywords" content="metatags, calculadora, HTML, matemática, Tabela">
+    <meta name="author" content="Otávio Augusto">
+    <meta name="language" content="pt-br">
+    <title>Atividade Calculadora</title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+
+    <style>
+        .Numero {
+            background-color: rgb(255, 255, 255);
+            width: 27px;
+            border: 2px solid black;
+            padding: 7px;
+        }
+
+        .Numero:hover{
+            background-color: lightgray;
+        }
+
+        .Funcao{
+            background-color: rgb(12, 107, 124);
+            color: white;
+            width: 27px;
+            border-color: black;
+            padding: 7px;
+        }
+
+        .Funcao:hover{
+            background-color: rgb(18, 166, 192);
+        }
+
+        .Visor{
+            background-color: rgb(139, 252, 182);
+            color: rgb(0, 0, 0);
+        }
+
+        td{
+            width: 2px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Curso Senac DS- Atividade Aprendizado Tabelas HTML5</h1>
+        <h3>Espero que goste professora!</h3>
+    </header>
+    <main>
+        <figure>
+            <table class="Tabela" border="2" style="background-color: rgba(255, 136, 16, 0.828); border-radius: 7px;">
+                <tbody>
+                    <tr>
+                        <td colspan="4"> <!--colspan: Faz a célula se estender por várias colunas-->
+                            <input style="width: 126px; height: 30px;box-sizing: border-box;" type="text" value="" class="Visor"
+                                id="Visor">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><button class="Funcao" id="C">C</button></td>
+                        <td><button class="Funcao" id="<"><</button></td>
+                        <td><button class="Funcao" id="/">/</button></td>
+                        <td><button class="Funcao" id="*">*</button></td>
+                    </tr>
+
+                    <tr>
+                        <td><button class="Numero" id="7">7</button></td>
+                        <td><button class="Numero" id="8">8</button></td>
+                        <td><button class="Numero" id="9">9</button></td>
+                        <td><button class="Funcao" id="-">-</button></td>
+                    </tr>
+
+                    <tr>
+                        <td><button class="Numero" id="4">4</button></td>
+                        <td><button class="Numero" id="5">5</button></td>
+                        <td><button class="Numero" id="6">6</button>
+                        <td><button class="Funcao" id="+">+</button></td>
+                    </tr>
+
+                    <tr>
+                        <td><button class="Numero" id="1">1</button></td>
+                        <td><button class="Numero" id="2">2</button></td>
+                        <td><button class="Numero" id="3">3</button>
+                        <td rowspan="2" style="height: 50px; border: 2px black; box-sizing: border-box;"><button class="Funcao" id="=" style="height: 75px;">=</button></td>
+                        <!--rowspan: Faz a célula se estender por várias linhas-->
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><button class="Numero" id="0" style="width: 60px;">0</button></td>
+                        <td colspan="1"><button class="Funcao" id=".">.</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+
+    </main>
+    <footer>
+        <ul>
+            <li><a href="MenuPrincipalAtividades.html">Voltar</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

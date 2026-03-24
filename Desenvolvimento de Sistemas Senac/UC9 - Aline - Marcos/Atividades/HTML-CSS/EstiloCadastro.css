@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+}    
+    
+header{
+    background-color: rgb(192, 192, 247);
+}
+
+.Imagem {
+    width: 120px;
+    height: 90%;
+}
+
+.Opcoes {
+    display: inline-flex;
+    background-color: rgb(255, 188, 33);
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+}
+
+.Opcao {
+    display: flex;
+    width: 440px;
+    height: 30px;
+    margin-right: 10px;
+    justify-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.Logo {
+    display: flex;
+    justify-content: center;
+}

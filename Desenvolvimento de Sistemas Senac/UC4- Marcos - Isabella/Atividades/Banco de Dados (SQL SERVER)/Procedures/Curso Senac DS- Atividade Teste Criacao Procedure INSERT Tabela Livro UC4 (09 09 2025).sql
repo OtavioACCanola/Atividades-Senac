@@ -20,7 +20,6 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_Inserir_Livros_I
 (
-	@ID_Livros	INT,
 	@Titulo VARCHAR(100) ,
 	@Autor VARCHAR(100),
 	@Ano_Publicacao INT,
@@ -29,9 +28,10 @@ CREATE PROCEDURE SP_Inserir_Livros_I
 AS
 BEGIN
 	INSERT INTO TBL_Livros VALUES
-	(@ID_Livros, @Titulo, @Autor, @Ano_Publicacao, @Genero)
+	(@Titulo, @Autor, @Ano_Publicacao, @Genero)
 END
 GO -- Para criar uma Procedure você seleciona a procedure do CREATE PROCEDURE até o GO e executa o comando para criar
 
-EXEC SP_Inserir_Livros_I 1,'Doncasmurro','Machado de Asis', 1890, 'Romance'
+EXEC SP_Inserir_Livros_I 'Doncasmurro','Machado de Asis', 1890, 'Romance'
+EXEC SP_Inserir_Livros_I 'oi', 'h', 78, 'asjd'
 SELECT * FROM TBL_Livros

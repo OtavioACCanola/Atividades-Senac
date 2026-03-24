@@ -1,0 +1,8 @@
+Pedir qual Id o usuário quer editar
+Se não houver o Id mensagem que não existe usuário com o Id
+Se sim, mostrar as opções para ele alterar o usuário com um texto no TextField dos dados que já estão no banco
+
+Pedir o email, a senha e o nome novos
+Se for igual, não validar, e não for validar
+
+Fazer a função de editar

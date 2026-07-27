@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Soma</title>
+</head>
+<header>
+    <h1>Atividade Soma com Função</h1>
+    <hr>
+</header>
+
+<body>
+    <script>
+
+        function somar(num1, num2) {
+            return parseInt(num1) + parseInt(num2);
+        }
+
+        let numero1 = parseInt((prompt("Digite um número para somar: ")))
+        let numero2 = parseInt((prompt("Digite um outro número para somar: ")))
+
+        if (Number.isInteger(numero1) || Number.isInteger(numero2)) {
+            alert("Soma de " + numero1 + " + " + numero2 + " = " + somar(numero1, numero2))
+        }
+        else if (numero1 === null || numero2 === null){
+            alert("Os campos precisam estar todos preenchidos e serem numéricos!")
+        }
+        else {
+            alert("Os campos precisam estar todos preenchidos e serem numéricos!")
+        }
+    </script>
+</body>
+
+</html>

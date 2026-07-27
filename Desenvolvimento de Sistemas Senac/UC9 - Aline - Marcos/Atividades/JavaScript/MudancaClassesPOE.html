@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authot" content="Otávio Augusto Canola do Carmo">
+    <title>Atividade Mudança CSS com JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .Destaque {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .botao {
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        td {
+            padding-right: 40px;
+        }
+
+        .Cabecalho {
+            font-weight: 700;
+            margin-bottom: 20px;
+
+        }
+
+        .esconder {
+            display: none;
+        }
+
+        #Cabeçalho {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mudança do CSS com JS</h1>
+    </header>
+    <main>
+        <p id="Mensagem">Destacar:</p>
+        <button class="botao" id="Botao" onclick="destacar()">Destacar Titulo</button>
+        <button class="btn btn-outline-primary" id="BotaoAlterar" onclick="alterarBotao()">Alterar Botao</button>
+        <button class="btn btn-outline-primary" id="BotaoMostrarTabela" onclick="mostrarTabela()">Mostrar
+            Tabela</button>
+        <button class="btn btn-outline-primary" id="BotaoEstilarTabela" onclick="estilizarTabela()">Estilizar
+            Tabela</button>
+
+        <table class="esconder" id="Tabela">
+            <thead id="Cabeçalho" >
+                <th colspan="4">
+                    Tebela Estados
+                </th>
+            </thead>
+            <tbody border="4">
+                <tr class="Cabecalho">
+                    <td>Estado</td>
+                    <td>Sigla</td>
+                    <td>Capital</td>
+                    <td>Região</td>
+                </tr>
+                <tr>
+                    <td>São Paulo</td>
+                    <td>SP</td>
+                    <td>São Paulo</td>
+                    <td>Sudeste</td>
+                </tr>
+                <tr>
+                    <td>Minas Gerais</td>
+                    <td>MG</td>
+                    <td>Belo Horizonte</td>
+                    <td>Sudeste</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script>
+        /* Fazer funcção mostrar colocar uma classe no botão do bootstrap para ser um botão bonito */
+
+        function destacar() {
+            let mensagem = document.getElementById("Mensagem");
+            mensagem.classList.add("Destaque");
+        }
+
+        function alterarBotao() {
+            const botaoDestaque = document.getElementById("Botao");
+            const botaoAlterar = document.getElementById("BotaoAlterar")
+
+            botaoDestaque.classList.add("btn", "btn-outline-success")
+        }
+
+        function mostrarTabela() {
+            const botaoMostrarTabela = document.getElementById("BotaoMostrarTabela");
+            const tabela = document.getElementById("Tabela");
+            tabela.classList.remove("esconder")
+
+        }
+
+        // Terminar
+        function estilizarTabela() {
+            const tabela = document.getElementById("Tabela");
+
+            tabela.classList.remove("esconder")
+            tabela.classList.add("table", "table-striped")
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

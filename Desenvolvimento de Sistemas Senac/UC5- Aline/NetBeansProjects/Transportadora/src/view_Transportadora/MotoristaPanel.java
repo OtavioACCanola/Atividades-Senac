@@ -1,8 +1,8 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
-import controller_Transportadora.*;
-import model_Transportadora.*;
+import br.com.fretesmvc.config.AppContext;
+import br.com.fretesmvc.controller.*;
+import br.com.fretesmvc.model.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -90,12 +90,12 @@ public class MotoristaPanel extends JPanel implements Refreshable {
     @Override
     public void refresh() {
         transportadoras.removeAllItems();
-        for (Transportadora t : traCtrl.Listar()) {
+        for (Transportadora t : traCtrl.listar()) {
             transportadoras.addItem(t);
         }
         model.setRowCount(0);
         for (Motorista m : motCtrl.listar()) {
-            Transportadora tx = traCtrl.Listar().stream().filter(tr -> tr.getId().equals(m.getTransportadoraId())).findFirst().orElse(null);
+            Transportadora tx = traCtrl.listar().stream().filter(tr -> tr.getId().equals(m.getTransportadoraId())).findFirst().orElse(null);
             model.addRow(new Object[]{m.getNome(), m.getCpf(), m.getCnh(), m.getTelefone(), tx != null ? tx.getRazaoSocial() : ""});
         }
     }

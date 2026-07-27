@@ -1,8 +1,8 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
-import controller_Transportadora.*;
-import model_Transportadora.*;
+import br.com.fretesmvc.config.AppContext;
+import br.com.fretesmvc.controller.*;
+import br.com.fretesmvc.model.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -78,7 +78,7 @@ public class VeiculoPanel extends JPanel implements Refreshable {
                 throw new IllegalStateException("Cadastre uma transportadora primeiro");
             }
             TipoVeiculo tipo = moto.isSelected() ? TipoVeiculo.MOTO : carro.isSelected() ? TipoVeiculo.CARRO : TipoVeiculo.CAMINHAO;
-            veiCtrl.Cadastrar(t.getId(), tipo, placa.getText(), modelo.getText());
+            veiCtrl.cadastrar(t.getId(), tipo, placa.getText(), modelo.getText());
             placa.setText("");
             modelo.setText("");
             refresh();
@@ -90,12 +90,12 @@ public class VeiculoPanel extends JPanel implements Refreshable {
     @Override
     public void refresh() {
         transportadoras.removeAllItems();
-        for (Transportadora t : traCtrl.Listar()) {
+        for (Transportadora t : traCtrl.listar()) {
             transportadoras.addItem(t);
         }
         model.setRowCount(0);
         for (Veiculo v : veiCtrl.listar()) {
-            Transportadora tx = java.util.Arrays.stream(traCtrl.Listar().toArray(new Transportadora[0])).filter(tr -> tr.getId().equals(v.getTransportadoraId())).findFirst().orElse(null);
+            Transportadora tx = java.util.Arrays.stream(traCtrl.listar().toArray(new Transportadora[0])).filter(tr -> tr.getId().equals(v.getTransportadoraId())).findFirst().orElse(null);
             model.addRow(new Object[]{v.getPlaca(), v.getModelo(), v.getTipo(), tx != null ? tx.getRazaoSocial() : "", v.getTipo().getCustoPorKm()});
         }
     }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Eventos</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+
+        <h1>Atividade: Botão Clique</h1>
+        <button id = "btn">Clique Aqui!</button>
+        <p id = "mensagem"></p>
+
+        <br>
+        <hr>
+        <br>
+
+        <h1>Desafio: Liga e Desliga</h1>
+        <button id="Ligar">Ligar</button>
+        <button id="Desligar">Desligar</button>
+        <p id="situacao"></p>
+
+        <script>
+            const botaoclique = document.getElementById("btn");
+            const mensagem = document.getElementById("mensagem");
+
+            const botaoliga = document.getElementById("Ligar");
+            const botaodesliga = document.getElementById("Desligar");
+            const situacao = document.getElementById("situacao")
+
+            botaoclique.addEventListener("click", function () {
+                const addmensage = prompt("Digite uma frase para ser mostrada pelo botão: ")
+                mensagem.textContent = addmensage
+            })
+
+            botaoliga.addEventListener("click", function() {
+                const menlig = "O sistema foi ligado!"
+                situacao.textContent = menlig
+            })
+
+            botaodesliga.addEventListener("click", function() {
+                const mendesl = "O sistema foi desligado!"
+                situacao.textContent = mendesl
+            })
+        </script>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+.Lista {
+    position: relative;
+    margin-top: 2%;
+    margin-left: 10%;
+
+}
+
+#TituloTabela {
+    margin-left: 9.7%;
+}
+
+.Cabeçalho {
+    position: relative;
+}
+
+.Cadastro {
+    position: relative;
+    margin-left: 18%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 64%;
+}
+
+.Centro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    width: 70%;
+    height: 100%;
+    margin-bottom: 5%;
+}
+
+.Centro .Numeros {
+    position: relative;
+}
+
+.Linha {
+    color: black;
+    height: 5px;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 3%;
+    top: 40%;
+    color: white;
+}
+
+.botao:hover {
+    color: white;
+}
+
+.Formulario {
+    position: relative;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.apagar {
+    display: none;
+}
+
+tr.notaVermelha {
+
+    width: 100%;
+}
+
+tr.notaVermelha td {
+    background-color: red;
+    color: white;
+
+}
+
+tr.notaVermelha button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: white;
+    bottom: 2px;
+    color: red;
+}
+
+tr.notaVermelha button:hover {
+    color: white;
+    background-color: red;
+
+}
+
+tr.AlunoNovo button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: red;
+    bottom: 2px;
+    color: white;
+}
+
+tr.AlunoNovo button:hover {
+    color: red;
+    background-color: white;
+}
+.item {
+    position: relative;
+
+}
+
+.thead {
+    display: flex;
+    justify-content: space-between;
+}

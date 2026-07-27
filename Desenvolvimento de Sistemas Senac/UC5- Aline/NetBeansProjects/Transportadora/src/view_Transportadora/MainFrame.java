@@ -1,13 +1,13 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
+import br.com.fretesmvc.config.AppContext;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-    public MainFrame(Config_Transportadora.AppContext ctx) {
+    public MainFrame(AppContext ctx) {
         super("Sistema de Pagamento de Fretes - MVC EDU");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1200, 800);

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!--HTML-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authot" content="Otávio Augusto Canola do Carmo">
+    <meta name="Description" content="Site que contém as informações da situação dos alunos">
+    <meta name="keywords" content="Boletim, notas, situação, alunos, senac, javascript, html, css">
+    <title>Boletim Senac</title>
+
+    <!--Importação BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+
+    <!--Importação do SweetAlert-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js" defer></script>
+
+    <!--Importação Model-->
+    <script src="./JavaScript/Front-End/ModelFrontEnd/calcularMedia.js"></script>
+    <script src="./JavaScript/Front-End/ModelFrontEnd/validacoesModel.js"></script>
+    <script src="./JavaScript/Front-End/ModelFrontEnd/obterAlunos.js"></script>
+
+
+    <!--Importação View-->
+    <script src="./JavaScript/Front-End/View/boletimView.js" charset="UTF-8" defer></script>
+
+    <!--Importação Controller-->
+    <script src="./JavaScript/Front-End/ControllerFrontEnd/excluirAluno.js" charset="UTF-8" defer></script>
+    <script src="./JavaScript/Front-End/ControllerFrontEnd/salvarNota.js" charset="UTF-8" defer></script>
+    <script src="./JavaScript/Front-End/ControllerFrontEnd/consultarAluno.js" charset="UTF-8" defer></script>
+    <script src="./JavaScript/Front-End/ControllerFrontEnd/addAluno.js" charset="UTF-8" defer></script>
+
+
+    <link rel="stylesheet" href="./CSS/StyleTblNotas.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="Imagens/Senac_logo.png" alt="Logo Senac" width="50" height="30" d-inline-block
+                        align-text-top>
+                    Senac
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section class="Lista">
+            <h2 id="TituloTabela">Lista de Alunos</h2>
+
+            <div class="Centro">
+                <table class="table">
+                    <thead>
+                        <tr class="Cabeçalho">
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Trabalho</th>
+                            <th scope="col">Prova</th>
+                            <th scope="col">Média</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="CorpoTabela">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="Cadastro">
+            <h2>Cadastro e Visualização de Alunos</h2>
+
+            <div class="table-group-divider" id="Linha"></div>
+
+            <form action="submit" class="Formulario" id="formulario">
+                <div class="row Formulario">
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <label for="TxtNome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="TxtNome" placeholder="Nome do Aluno">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <label for="TxtNotaTrabalho" class="form-label">Nota de Trabalho:</label>
+                            <input type="number" class="form-control" id="TxtNotaTrabalho"
+                                placeholder="Nota do Trabalho">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="TxtNotaProva" class="form-label">Nota de Prova:</label>
+                            <input type="number" class="form-control" id="TxtNotaProva" placeholder="Nota da Prova">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+
+                        </div>
+                        <div class="mb-1 botao">
+                            <button type="button" class="btn btn-info botao" id="BtnSalvar">Salvar</button>
+                            <button type="button" class="btn btn-info botao" id="BtnConsultarAluno">Consultar
+                                Alunos</button>
+                        </div>
+                    </div>
+
+            </form>
+        </section>
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

@@ -1,8 +1,8 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
-import controller_Transportadora.RotaController;
-import model_Transportadora.Rota;
+import br.com.fretesmvc.config.AppContext;
+import br.com.fretesmvc.controller.RotaController;
+import br.com.fretesmvc.model.Rota;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -57,7 +57,7 @@ public class RotaPanel extends JPanel implements Refreshable {
     private void cadastrar() {
         try {
             double km = ((Number) distancia.getValue()).doubleValue();
-            ctrl.Cadastrar(origem.getText(), destino.getText(), km);
+            ctrl.cadastrar(origem.getText(), destino.getText(), km);
             origem.setText("");
             destino.setText("");
             distancia.setValue(1.0);

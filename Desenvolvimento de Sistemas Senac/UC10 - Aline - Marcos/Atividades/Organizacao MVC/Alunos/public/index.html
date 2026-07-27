@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Alunos</title>
+    <script src="../View/CriarLinha.js" defer></script>
+    <script src="../Controller/SalvarAluno.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Cadastro de Alunos</h1>
+
+    <form id="form-aluno">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="number" id="trabalho" placeholder="Nota Trabalho">
+        <input type="number" id="prova" placeholder="Nota Prova">
+        <button type="submit">Salvar</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Trabalho</th>
+                <th>Prova</th>
+                <th>Média</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-alunos"></tbody>
+    </table>
+
+</body>
+
+</html>

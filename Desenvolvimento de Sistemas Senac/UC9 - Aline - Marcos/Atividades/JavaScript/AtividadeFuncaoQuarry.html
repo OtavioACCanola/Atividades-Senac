@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarrys</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <ul class="listaCompras">
+            <li class="item">Pão</li>
+            <li class="item">Leite</li>
+            <li class="item">Café</li>
+        </ul>
+        <button id="btn-destacar">Destacar Itens</button>
+
+        <script>
+            const botaoDestacar = document.querySelector("#btn-destacar")
+            const itens = document.querySelectorAll(".item");
+
+            botaoDestacar.addEventListener('click', () => {
+                itens.forEach((item, index) => {
+                    item.style.backgroundColor = "yellow";
+                    item.textContent = `Item ${index + 1} foi destacado`;
+                })
+            })
+        </script>
+    </main>
+</body>
+</html>

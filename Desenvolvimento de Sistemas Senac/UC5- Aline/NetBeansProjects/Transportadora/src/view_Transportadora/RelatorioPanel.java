@@ -1,8 +1,8 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
-import controller_Transportadora.*;
-import model_Transportadora.Frete;
+import br.com.fretesmvc.config.AppContext;
+import br.com.fretesmvc.controller.*;
+import br.com.fretesmvc.model.Frete;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -113,7 +113,7 @@ public class RelatorioPanel extends JPanel implements Refreshable {
         for (Frete f : fretes) {
             var mot = motCtrl.listar().stream().filter(m -> m.getId().equals(f.getMotoristaId())).findFirst().orElse(null);
             var vei = veiCtrl.listar().stream().filter(v -> v.getId().equals(f.getVeiculoId())).findFirst().orElse(null);
-            var tra = traCtrl.Listar().stream().filter(t -> t.getId().equals(f.getTransportadoraID())).findFirst().orElse(null);
+            var tra = traCtrl.listar().stream().filter(t -> t.getId().equals(f.getTransportadoraId())).findFirst().orElse(null);
             var rot = rotaCtrl.listar().stream().filter(r -> r.getId().equals(f.getRotaId())).findFirst().orElse(null);
             model.addRow(new Object[]{f.getDataHora().toString(), mot != null ? mot.getNome() : "", vei != null ? (vei.getTipo() + "/" + vei.getPlaca()) : "", tra != null ? tra.getRazaoSocial() : "", rot != null ? (rot.getOrigem() + "→" + rot.getDestino()) : "", UIUtil.BRL.format(f.getValor())});
         }

@@ -1,8 +1,8 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
-import controller_Transportadora.*;
-import model_Transportadora.*;
+import br.com.fretesmvc.config.AppContext;
+import br.com.fretesmvc.controller.*;
+import br.com.fretesmvc.model.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -93,7 +93,7 @@ public class VinculoPanel extends JPanel implements Refreshable {
     @Override
     public void refresh() {
         transportadoras.removeAllItems();
-        for (Transportadora t : traCtrl.Listar()) {
+        for (Transportadora t : traCtrl.listar()) {
             transportadoras.addItem(t);
         }
         motoristas.removeAllItems();

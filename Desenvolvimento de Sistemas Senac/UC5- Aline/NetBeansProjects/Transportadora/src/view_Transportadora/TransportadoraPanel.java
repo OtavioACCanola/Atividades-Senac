@@ -1,8 +1,8 @@
 package view_Transportadora;
 
-import Config_Transportadora.AppContext;
-import controller_Transportadora.*;
-import Model_Transportadora.*;
+import br.com.fretesmvc.config.AppContext;
+import br.com.fretesmvc.controller.TransportadoraController;
+import br.com.fretesmvc.model.Transportadora;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -56,7 +56,7 @@ public class TransportadoraPanel extends JPanel implements Refreshable {
 
     private void cadastrar() {
         try {
-            ctrl.Cadastrar(razao.getText(), cnpj.getText(), endereco.getText());
+            ctrl.cadastrar(razao.getText(), cnpj.getText(), endereco.getText());
             razao.setText("");
             cnpj.setText("");
             endereco.setText("");
@@ -69,7 +69,7 @@ public class TransportadoraPanel extends JPanel implements Refreshable {
     @Override
     public void refresh() {
         model.setRowCount(0);
-        for (model_Transportadora.Transportadora t : ctrl.Listar()) {
+        for (Transportadora t : ctrl.listar()) {
             model.addRow(new Object[]{t.getRazaoSocial(), t.getCnpj(), t.getEndereco()});
         }
     }

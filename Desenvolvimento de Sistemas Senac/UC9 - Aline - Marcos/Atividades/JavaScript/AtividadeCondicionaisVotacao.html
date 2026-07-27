@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Condicional Votação</title>
+</head>
+<body>
+    <h1>Atividade Condicionais</h1>
+
+    <script>
+        alert("Sistema Votação")
+
+        const Nome = prompt("Insira seu Nome: ")
+
+        let Idade = prompt("Insira sua Idade: ")
+
+        if (Idade >= 18) {
+            console.log("O Usuário, " + Nome + ", tem que votar obrigatoriamente, por ser maior de idade")
+        }
+
+        else if (Idade == null){
+            alert("O Usuário, " + Nome + ", não informou a idade, não é possível consultar a disponibilidade de voto!")
+        }
+
+        else if (Idade == 16 || Idade == 17){
+            alert("O Usuáro, " + Nome + ", pode votar opcionalmente na eleição!")
+        }
+
+        else {
+            alert("O Usuário, " + Nome + ", ainda não pode votar! Ele é menor de Idade")
+        }
+    </script>
+</body>
+</html>

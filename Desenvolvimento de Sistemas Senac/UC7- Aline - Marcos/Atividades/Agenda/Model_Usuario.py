@@ -44,6 +44,10 @@ class Model_Usuario():
         listaNome = self.dao.consultarNomesId()
         return listaNome
 
+    def consultarEmail(self, email):
+        constEmail = self.dao.consultaEmailCadastro(email)
+        return constEmail
+
             
         
             

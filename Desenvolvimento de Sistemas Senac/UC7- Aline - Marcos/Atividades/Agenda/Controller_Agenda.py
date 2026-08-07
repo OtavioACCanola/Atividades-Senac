@@ -59,6 +59,8 @@ class Controller():
             if informacoes:
                 self.JanelaPrincipal.TxtNomeTP.setPlaceholderText(str(informacoes[0][0])) # Pegamos a lista no 1º 0 e depois o valor do primeiro elemento da lista no 2º 0, ou seja, uma matriz, um vetor dentro de outro vetor
                 self.JanelaPrincipal.TxtEmailTP.setPlaceholderText(str(informacoes[0][1]))
+
+                return informacoes
     
     def Autenticar(self):
 
@@ -79,9 +81,17 @@ class Controller():
 
     def Cadastrar(self):
 
+        inf = self.model.consultarEmail(self.JanelaPrincipal.TxtEmailTP.text())
+        print(inf)
+
         if self.JanelaPrincipal.TxtNomeTP.text() == "" or self.JanelaPrincipal.TxtEmailTP.text() == "" or self.JanelaPrincipal.TxtSenhaTP.text() == "" or self.JanelaPrincipal.Txt2SenhaTP.text() == "":
             self.JanelaPrincipal.MensagemErroJanelaPrincipal("Todos os Campos Precisam estar Preenchidos")
             self.JanelaPrincipal.limpaCampo()
+
+        elif len(inf) == 1:
+            if inf[0][0] == self.JanelaPrincipal.TxtEmailTP.text():
+                self.JanelaPrincipal.MensagemErroJanelaPrincipal("Email já Cadastrado no Banco!")
+
         else:
             if self.JanelaPrincipal.TxtSenhaTP.text() == self.JanelaPrincipal.Txt2SenhaTP.text(): 
                 self.model.Cadastrar(self.JanelaPrincipal.TxtNomeTP.text(), self.JanelaPrincipal.TxtEmailTP.text(), self.JanelaPrincipal.TxtSenhaTP.text())
@@ -97,7 +107,7 @@ class Controller():
             self.JanelaPrincipal.limpaCampo()
         else:
             self.model.Remover(self.JanelaPrincipal.TxtEmailTP.text())
-            self.JanelaPrincipal.MensagemSucessoJanelaPrincipal("Cadastro Realizado com Sucesso!")
+            self.JanelaPrincipal.MensagemSucessoJanelaPrincipal("Remoção Realizada com Sucesso!")
             self.JanelaPrincipal.limpaCampo()
 
 # Colocar um Verificador se As informações adicionadas são as mesmas das anteriores
@@ -108,9 +118,10 @@ class Controller():
             self.JanelaPrincipal.limpaCampo()
         else:
             inf = self.buscarInformacaoUsuario()
+            print(inf)
 
-            if inf[0][1] == self.JanelaPrincipal.TxtNomeTP.text() or inf[0][2] == self.JanelaPrincipal.TxtEmailTP.text() or inf [0][3]== self.JanelaPrincipal.TxtSenhaTP.text():
-                self.JanelaPrincipal.MensagemErroJanelaPrincipal("Nenhuma Edição foi Feita")
+            if inf[0][0] == self.JanelaPrincipal.TxtNomeTP.text() and inf[0][1] == self.JanelaPrincipal.TxtEmailTP.text() and inf [0][2]== self.JanelaPrincipal.TxtSenhaTP.text():
+                self.JanelaPrincipal.MensagemErroJanelaPrincipal("Nenhuma Alteração foi Feita em comparação à do banco")
             else:
                 edicao = self.model.Editar(self.JanelaPrincipal.Opcoes.currentData(), self.JanelaPrincipal.TxtEmailTP.text(), self.JanelaPrincipal.TxtSenhaTP.text(), self.JanelaPrincipal.TxtNomeTP.text())
 

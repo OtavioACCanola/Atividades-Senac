@@ -86,6 +86,24 @@ class DAO_Usuario():
             print(f"Erro ao Consultar Informações do Usuário: {e}")
             return []
 
+    def consultaEmailCadastro(self, email):
+        try:
+            sql = """
+                    SELECT Email FROM TBL_Usuarios WHERE Email = ?
+                  """
+            conn = ConnectionFactory.get_Connection()
+            cursor = conn.cursor()
+            cursor.execute(sql, (email,))
+            infEmail = cursor.fetchall()
+            cursor.close()
+            conn.close()
+            return infEmail
+        except Exception as e:
+            print(f"Erro ao consultar email: {e}")
+            return []
+
+            
+
     def Remover(self, Email):
         sql_Verifica = "SELECT Id FROM TBL_Usuarios WHERE Email = ?"
         sql_Deleta = "DELETE FROM TBL_Usuarios WHERE Email = ?"

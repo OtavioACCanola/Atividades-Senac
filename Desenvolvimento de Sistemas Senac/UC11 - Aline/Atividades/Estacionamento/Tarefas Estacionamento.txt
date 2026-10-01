@@ -1,0 +1,8 @@
+Tarefas:
+
+- Fazer a padronização do banco: OK
+
+Pendências:
+- Fazer comandos select para vagas estacionamento
+- Fazer comandos select para total de pagamentos (valor total do mês, etc)
+- Revisar procedures Guilherme, para ver se está funcional: ok

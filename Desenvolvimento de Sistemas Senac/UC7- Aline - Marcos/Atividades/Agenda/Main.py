@@ -6,7 +6,7 @@ def listarNome(self):
     lista = str(dao.consultarNomes(self))
     print(lista)
 
-listarNome()
+# listarNome()
 
 def opcoes():
     while True:
